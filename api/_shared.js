@@ -1,5 +1,5 @@
 export const MAX_OUTPUT_TOKENS = 350;
-export const MODEL = 'gemini-2.5-flash-lite';
+export const MODEL = 'gemini-3.5-flash-lite';
 
 export const SYSTEM_PROMPT = `You are the diagnostic engine for SwitchProof, an evidence-based upskilling product for professionals moving from software testing, customer support or operations into data analytics.
 
