@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SwitchProof gives career switchers an evidence-based data analytics gap diagnostic.">
+  <title>SwitchProof | Test your data-analytics readiness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="nav shell">
+    <a class="brand" href="#top" aria-label="SwitchProof home"><span class="brand-mark">S</span>SwitchProof</a>
+    <a class="nav-link" href="#diagnostic">Try the diagnostic</a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">For testing, support and operations professionals</p>
+        <h1>Find the three gaps between your experience and a data-analytics role.</h1>
+        <p class="lead">Paste a real job description. SwitchProof maps your transferable skills, identifies the most important gaps and recommends the shortest practice path.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#diagnostic">Check my readiness</a>
+          <span>Free preview · about 60 seconds</span>
+        </div>
+        <div class="proof-row" aria-label="Product principles">
+          <span>Evidence over claims</span><span>Private by design</span><span>No job guarantees</span>
+        </div>
+      </div>
+      <aside class="score-card" aria-label="Sample gap report">
+        <div class="score-top"><span>Sample gap report</span><span class="pill">3 priorities</span></div>
+        <div class="mini-row"><b>SQL joins</b><span>High priority</span></div>
+        <div class="bar"><i style="width:82%"></i></div>
+        <div class="mini-row"><b>Business insight</b><span>Medium</span></div>
+        <div class="bar"><i style="width:61%"></i></div>
+        <div class="mini-row"><b>Data cleaning</b><span>Medium</span></div>
+        <div class="bar"><i style="width:54%"></i></div>
+        <p>Your current work is evidence. The report shows where to focus next.</p>
+      </aside>
+    </section>
+
+    <section class="metric-band">
+      <div class="shell metric-grid">
+        <div><strong id="reportsCount">—</strong><span>diagnostics generated</span></div>
+        <div><strong id="topSkill">Loading…</strong><span>most demanded skill this week</span></div>
+        <div><strong>3</strong><span>requests per visitor</span></div>
+      </div>
+    </section>
+
+    <section class="section shell" id="diagnostic">
+      <div class="section-heading">
+        <p class="eyebrow">AI readiness diagnostic</p>
+        <h2>Am I ready for this job?</h2>
+        <p>Use a job description, not a résumé. We assess role requirements and learning gaps—not your worth or employability.</p>
+      </div>
+
+      <div class="tool-grid">
+        <form id="diagnosticForm" class="panel">
+          <label for="background">Your current background</label>
+          <select id="background" name="background" required>
+            <option value="">Choose one</option>
+            <option>Software testing / QA</option>
+            <option>Customer support</option>
+            <option>Business operations</option>
+            <option>Sales operations</option>
+            <option>Other adjacent role</option>
+          </select>
+
+          <label for="experience">Experience level</label>
+          <select id="experience" name="experience" required>
+            <option value="">Choose one</option>
+            <option>0–2 years</option>
+            <option>3–5 years</option>
+            <option>6–10 years</option>
+            <option>10+ years</option>
+          </select>
+
+          <label for="jobDescription">Job description</label>
+          <textarea id="jobDescription" name="jobDescription" rows="12" minlength="120" maxlength="6000" placeholder="Paste the responsibilities and requirements from a data analyst job description…" required></textarea>
+          <div class="field-note"><span>Remove names, email addresses and phone numbers.</span><span id="charCount">0 / 6000</span></div>
+
+          <label class="consent"><input id="consent" type="checkbox" required> I confirm this is a job description and contains no personal information.</label>
+          <button class="button primary full" type="submit" id="submitButton">Find my three gaps</button>
+          <p class="limit-note">Maximum three requests per browser. Output is educational and does not predict hiring outcomes.</p>
+        </form>
+
+        <section class="panel result-panel" aria-live="polite">
+          <div id="emptyState" class="empty-state">
+            <span class="empty-icon">↗</span>
+            <h3>Your gap report will appear here</h3>
+            <p>You will get three prioritized gaps, one transferable strength and a practical next step.</p>
+          </div>
+          <div id="loadingState" class="loading-state hidden"><span class="spinner"></span><h3>Reading the role requirements…</h3><p>Comparing the job description with your selected background.</p></div>
+          <div id="errorState" class="message error hidden"></div>
+          <div id="refusalState" class="message refusal hidden"></div>
+          <div id="resultState" class="hidden">
+            <p class="eyebrow">Your SwitchProof preview</p>
+            <h3 id="resultTitle">Three gaps to close</h3>
+            <div id="gapList"></div>
+            <div class="strength"><span>Transferable strength</span><p id="strengthText"></p></div>
+            <div class="next-step"><span>Start here</span><p id="nextStepText"></p></div>
+            <p class="disclaimer" id="disclaimerText"></p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="how section shell">
+      <div class="section-heading"><p class="eyebrow">The full SwitchProof sprint</p><h2>Diagnose, practise, retest.</h2></div>
+      <div class="steps">
+        <article><span>01</span><h3>Take the case</h3><p>A 40-minute diagnostic using a realistic dataset, SQL, spreadsheets and a short business insight.</p></article>
+        <article><span>02</span><h3>Close the gaps</h3><p>Ten days of focused practice, about 20 minutes daily, based on a fixed scoring rubric.</p></article>
+        <article><span>03</span><h3>Show improvement</h3><p>Retake a comparable case and receive a before-and-after score report you control.</p></article>
+      </div>
+      <div class="price-row"><div><span>Diagnostic</span><strong>₹199</strong></div><div><span>Full sprint</span><strong>₹1,999</strong><small>diagnostic included</small></div></div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><span>SwitchProof pilot</span><span>Clear evidence of what you can do—and what to practise next.</span></div></footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>
